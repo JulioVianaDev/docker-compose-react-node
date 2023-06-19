@@ -1,6 +1,17 @@
 version: "3.8"
 services:
   mongodb:
-    
-  backend:
-  frontend:
+    image: 'mongo'
+    volumes: 
+      - data:/data/db
+    # environment: 
+      #- MONGO_INITDB_ROOT_USERNAME=max
+    env_file:
+      - ./env/mongo.env
+    # networks:
+    #   - goals-net
+  # backend:
+  # frontend:
+
+volumes:
+  data: 
