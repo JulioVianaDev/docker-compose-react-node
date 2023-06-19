@@ -22,7 +22,7 @@ MONGO_INITDB_ROOT_USERNAME = max
 MONGO_INITDB_ROOT_PASSWORD = secretpassword
 
 
-4. Crie um arquivo chamado `backend.env` no diretório `env` e defina as variáveis de ambiente necessárias para a API Node.js. Por exemplo:
+4. Edite um arquivo chamado `backend.env` no diretório `env` e defina as variáveis de ambiente necessárias para a API Node.js. Por exemplo:
 
 DB_HOST=mongodb
 DB_PORT=27017
