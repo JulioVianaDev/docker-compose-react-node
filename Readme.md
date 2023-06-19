@@ -15,10 +15,11 @@ Certifique-se de ter os seguintes requisitos instalados em sua máquina:
 
 2. Navegue até o diretório do projeto.
 
-3. Crie um arquivo chamado `mongo.env` no diretório `env` e defina as variáveis de ambiente necessárias para o MongoDB. Por exemplo:
+3. Edite o arquivo chamado `mongo.env` no diretório `env` e defina as variáveis de ambiente necessárias para o MongoDB. Por exemplo:
 
-MONGO_INITDB_ROOT_USERNAME=max
-MONGO_INITDB_ROOT_PASSWORD=secretpassword
+MONGO_INITDB_ROOT_USERNAME = max
+
+MONGO_INITDB_ROOT_PASSWORD = secretpassword
 
 
 4. Crie um arquivo chamado `backend.env` no diretório `env` e defina as variáveis de ambiente necessárias para a API Node.js. Por exemplo:
@@ -36,8 +37,7 @@ Certifique-se de que o valor de `DB_HOST` seja definido como `mongodb`, pois ess
 
 2. Execute o seguinte comando para iniciar os contêineres do Docker:
 
-docker-compose up
-
+```docker-compose up```
 
 Este comando irá baixar as imagens necessárias, criar e iniciar os contêineres do MongoDB, da API Node.js e do frontend.
 
@@ -54,6 +54,23 @@ Este comando irá baixar as imagens necessárias, criar e iniciar os contêinere
 - `env/mongo.env`: O arquivo que contém as variáveis de ambiente necessárias para o MongoDB.
 
 - `env/backend.env`: O arquivo que contém as variáveis de ambiente necessárias para a API Node.js.
+
+
+# Explicação da arquitetura
+
+## Imagens
+
+- O sistema é composto de 3 imagens criadas a partir do docker-compose.
+
+1. A imagem do mongodb é constituida a partir do mongo padrão da docker hub
+
+2. A imagem do backend é constituida por um Dockerfile que está dentro da pasta backend
+
+3. A imagem do frontend é constituida por um Dockerfile que está dentro da pasta frontend
+
+### Imagem demonstratica de como as imagens são criadas
+
+<img src="./imagens-readme/Images.png">
 
 ## Considerações Finais
 
